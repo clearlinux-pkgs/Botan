@@ -6,7 +6,7 @@
 #
 Name     : Botan
 Version  : 2.19.1
-Release  : 33
+Release  : 34
 URL      : https://botan.randombit.net/releases/Botan-2.19.1.tar.xz
 Source0  : https://botan.randombit.net/releases/Botan-2.19.1.tar.xz
 Source1  : https://botan.randombit.net/releases/Botan-2.19.1.tar.xz.asc
