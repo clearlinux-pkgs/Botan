@@ -6,7 +6,7 @@
 #
 Name     : Botan
 Version  : 2.19.1
-Release  : 34
+Release  : 35
 URL      : https://botan.randombit.net/releases/Botan-2.19.1.tar.xz
 Source0  : https://botan.randombit.net/releases/Botan-2.19.1.tar.xz
 Source1  : https://botan.randombit.net/releases/Botan-2.19.1.tar.xz.asc
@@ -90,7 +90,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1643038382
+export SOURCE_DATE_EPOCH=1666738639
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -105,13 +105,13 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1643038382
+export SOURCE_DATE_EPOCH=1666738639
 rm -rf %{buildroot}
 ## install_prepend content
 sed -i 's/env python/env python3/' src/scripts/install.py
 ## install_prepend end
 mkdir -p %{buildroot}/usr/share/package-licenses/Botan
-cp %{_builddir}/Botan-2.19.1/license.txt %{buildroot}/usr/share/package-licenses/Botan/7efe3a290c99654892b03dd4fc15cd5ebac6b788
+cp %{_builddir}/Botan-%{version}/license.txt %{buildroot}/usr/share/package-licenses/Botan/7efe3a290c99654892b03dd4fc15cd5ebac6b788 || :
 %make_install
 ## install_append content
 sed -e '1{/^#!/d}' -i %{buildroot}/usr/lib64/python*/site-packages/botan2.py
@@ -119,7 +119,7 @@ sed -e '1{/^#!/d}' -i %{buildroot}/usr/lib64/python*/site-packages/botan2.py
 
 %files
 %defattr(-,root,root,-)
-/usr/lib64/python3.10/site-packages/botan2.py
+/usr/lib64/python3.11/site-packages/botan2.py
 
 %files bin
 %defattr(-,root,root,-)
