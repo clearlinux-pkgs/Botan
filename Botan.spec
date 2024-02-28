@@ -9,7 +9,7 @@
 #
 Name     : Botan
 Version  : 3.3.0
-Release  : 45
+Release  : 46
 URL      : https://botan.randombit.net/releases/Botan-3.3.0.tar.xz
 Source0  : https://botan.randombit.net/releases/Botan-3.3.0.tar.xz
 Source1  : https://botan.randombit.net/releases/Botan-3.3.0.tar.xz.asc
