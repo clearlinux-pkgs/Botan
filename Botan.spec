@@ -8,11 +8,11 @@
 # Source0 file verified with key 0x6211EBF1EFBADFBC (jack@randombit.net)
 #
 Name     : Botan
-Version  : 3.6.0
-Release  : 53
-URL      : https://botan.randombit.net/releases/Botan-3.6.0.tar.xz
-Source0  : https://botan.randombit.net/releases/Botan-3.6.0.tar.xz
-Source1  : https://botan.randombit.net/releases/Botan-3.6.0.tar.xz.asc
+Version  : 3.6.1
+Release  : 54
+URL      : https://botan.randombit.net/releases/Botan-3.6.1.tar.xz
+Source0  : https://botan.randombit.net/releases/Botan-3.6.1.tar.xz
+Source1  : https://botan.randombit.net/releases/Botan-3.6.1.tar.xz.asc
 Source2  : 6211EBF1EFBADFBC.pkey
 Summary  : Crypto and TLS for Modern C++
 Group    : Development/Tools
@@ -110,8 +110,8 @@ chmod 700 .gnupg
 gpg --homedir .gnupg --import %{SOURCE2}
 gpg --homedir .gnupg --status-fd 1 --verify %{SOURCE1} %{SOURCE0} > gpg.status
 grep -E '^\[GNUPG:\] (GOODSIG|EXPKEYSIG) 6211EBF1EFBADFBC' gpg.status
-%setup -q -n Botan-3.6.0
-cd %{_builddir}/Botan-3.6.0
+%setup -q -n Botan-3.6.1
+cd %{_builddir}/Botan-3.6.1
 %patch -P 1 -p1
 %patch -P 2 -p1
 
@@ -123,7 +123,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1729608524
+export SOURCE_DATE_EPOCH=1730128691
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -159,7 +159,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1729608524
+export SOURCE_DATE_EPOCH=1730128691
 rm -rf %{buildroot}
 ## install_prepend content
 sed -i 's/env python/env python3/' src/scripts/install.py
@@ -355,91 +355,91 @@ mv %{buildroot}/usr/lib64/python* %{buildroot}/usr/lib
 /usr/include/botan-3/botan/xof.h
 /usr/include/botan-3/botan/zfec.h
 /usr/include/botan-3/botan/zlib.h
-/usr/lib64/cmake/Botan-3.6.0/botan-config-version.cmake
-/usr/lib64/cmake/Botan-3.6.0/botan-config.cmake
+/usr/lib64/cmake/Botan-3.6.1/botan-config-version.cmake
+/usr/lib64/cmake/Botan-3.6.1/botan-config.cmake
 /usr/lib64/libbotan-3.so
 /usr/lib64/pkgconfig/botan-3.pc
 
 %files doc
 %defattr(0644,root,root,0755)
-/usr/share/doc/botan-3.6.0/authors.txt
-/usr/share/doc/botan-3.6.0/handbook/abi.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/bigint.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/block_cipher.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/cipher_modes.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/compression.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/contents.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/credentials_manager.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/cryptobox.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/ecc.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/env_vars.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/ffi.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/filters.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/footguns.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/fpe.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/hash.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/kdf.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/keywrap.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/message_auth_codes.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/otp.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/passhash.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/pbkdf.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/pkcs11.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/providers.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/psk_db.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/pubkey.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/python.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/rng.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/roughtime.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/secmem.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/srp.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/stream_ciphers.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/tls.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/tpm.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/tss.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/versions.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/x509.rst
-/usr/share/doc/botan-3.6.0/handbook/api_ref/zfec.rst
-/usr/share/doc/botan-3.6.0/handbook/authors.txt
-/usr/share/doc/botan-3.6.0/handbook/building.rst
-/usr/share/doc/botan-3.6.0/handbook/cli.rst
-/usr/share/doc/botan-3.6.0/handbook/contents.rst
-/usr/share/doc/botan-3.6.0/handbook/credits.rst
-/usr/share/doc/botan-3.6.0/handbook/deprecated.rst
-/usr/share/doc/botan-3.6.0/handbook/dev_ref/configure.rst
-/usr/share/doc/botan-3.6.0/handbook/dev_ref/contents.rst
-/usr/share/doc/botan-3.6.0/handbook/dev_ref/continuous_integration.rst
-/usr/share/doc/botan-3.6.0/handbook/dev_ref/contributing.rst
-/usr/share/doc/botan-3.6.0/handbook/dev_ref/fuzzing.rst
-/usr/share/doc/botan-3.6.0/handbook/dev_ref/mistakes.rst
-/usr/share/doc/botan-3.6.0/handbook/dev_ref/next_major.rst
-/usr/share/doc/botan-3.6.0/handbook/dev_ref/oids.rst
-/usr/share/doc/botan-3.6.0/handbook/dev_ref/os.rst
-/usr/share/doc/botan-3.6.0/handbook/dev_ref/reading_list.rst
-/usr/share/doc/botan-3.6.0/handbook/dev_ref/release_process.rst
-/usr/share/doc/botan-3.6.0/handbook/dev_ref/test_framework.rst
-/usr/share/doc/botan-3.6.0/handbook/dev_ref/todo.rst
-/usr/share/doc/botan-3.6.0/handbook/goals.rst
-/usr/share/doc/botan-3.6.0/handbook/hardware_acceleration.rst
-/usr/share/doc/botan-3.6.0/handbook/index.rst
-/usr/share/doc/botan-3.6.0/handbook/migration_guide.rst
-/usr/share/doc/botan-3.6.0/handbook/old_news.rst
-/usr/share/doc/botan-3.6.0/handbook/openssl_migration_guide.rst
-/usr/share/doc/botan-3.6.0/handbook/packaging.rst
-/usr/share/doc/botan-3.6.0/handbook/pgpkey.txt
-/usr/share/doc/botan-3.6.0/handbook/roadmap.rst
-/usr/share/doc/botan-3.6.0/handbook/security.rst
-/usr/share/doc/botan-3.6.0/handbook/sem_ver.rst
-/usr/share/doc/botan-3.6.0/handbook/side_channels.rst
-/usr/share/doc/botan-3.6.0/handbook/support.rst
-/usr/share/doc/botan-3.6.0/license.txt
-/usr/share/doc/botan-3.6.0/news.txt
-/usr/share/doc/botan-3.6.0/pgpkey.txt
+/usr/share/doc/botan-3.6.1/authors.txt
+/usr/share/doc/botan-3.6.1/handbook/abi.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/bigint.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/block_cipher.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/cipher_modes.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/compression.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/contents.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/credentials_manager.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/cryptobox.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/ecc.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/env_vars.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/ffi.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/filters.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/footguns.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/fpe.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/hash.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/kdf.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/keywrap.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/message_auth_codes.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/otp.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/passhash.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/pbkdf.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/pkcs11.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/providers.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/psk_db.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/pubkey.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/python.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/rng.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/roughtime.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/secmem.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/srp.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/stream_ciphers.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/tls.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/tpm.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/tss.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/versions.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/x509.rst
+/usr/share/doc/botan-3.6.1/handbook/api_ref/zfec.rst
+/usr/share/doc/botan-3.6.1/handbook/authors.txt
+/usr/share/doc/botan-3.6.1/handbook/building.rst
+/usr/share/doc/botan-3.6.1/handbook/cli.rst
+/usr/share/doc/botan-3.6.1/handbook/contents.rst
+/usr/share/doc/botan-3.6.1/handbook/credits.rst
+/usr/share/doc/botan-3.6.1/handbook/deprecated.rst
+/usr/share/doc/botan-3.6.1/handbook/dev_ref/configure.rst
+/usr/share/doc/botan-3.6.1/handbook/dev_ref/contents.rst
+/usr/share/doc/botan-3.6.1/handbook/dev_ref/continuous_integration.rst
+/usr/share/doc/botan-3.6.1/handbook/dev_ref/contributing.rst
+/usr/share/doc/botan-3.6.1/handbook/dev_ref/fuzzing.rst
+/usr/share/doc/botan-3.6.1/handbook/dev_ref/mistakes.rst
+/usr/share/doc/botan-3.6.1/handbook/dev_ref/next_major.rst
+/usr/share/doc/botan-3.6.1/handbook/dev_ref/oids.rst
+/usr/share/doc/botan-3.6.1/handbook/dev_ref/os.rst
+/usr/share/doc/botan-3.6.1/handbook/dev_ref/reading_list.rst
+/usr/share/doc/botan-3.6.1/handbook/dev_ref/release_process.rst
+/usr/share/doc/botan-3.6.1/handbook/dev_ref/test_framework.rst
+/usr/share/doc/botan-3.6.1/handbook/dev_ref/todo.rst
+/usr/share/doc/botan-3.6.1/handbook/goals.rst
+/usr/share/doc/botan-3.6.1/handbook/hardware_acceleration.rst
+/usr/share/doc/botan-3.6.1/handbook/index.rst
+/usr/share/doc/botan-3.6.1/handbook/migration_guide.rst
+/usr/share/doc/botan-3.6.1/handbook/old_news.rst
+/usr/share/doc/botan-3.6.1/handbook/openssl_migration_guide.rst
+/usr/share/doc/botan-3.6.1/handbook/packaging.rst
+/usr/share/doc/botan-3.6.1/handbook/pgpkey.txt
+/usr/share/doc/botan-3.6.1/handbook/roadmap.rst
+/usr/share/doc/botan-3.6.1/handbook/security.rst
+/usr/share/doc/botan-3.6.1/handbook/sem_ver.rst
+/usr/share/doc/botan-3.6.1/handbook/side_channels.rst
+/usr/share/doc/botan-3.6.1/handbook/support.rst
+/usr/share/doc/botan-3.6.1/license.txt
+/usr/share/doc/botan-3.6.1/news.txt
+/usr/share/doc/botan-3.6.1/pgpkey.txt
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libbotan-3.so.6
-/usr/lib64/libbotan-3.so.6.6.0
+/usr/lib64/libbotan-3.so.6.6.1
 
 %files license
 %defattr(0644,root,root,0755)
